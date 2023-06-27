@@ -1,0 +1,55 @@
+/* MintForm.module.css */
+
+.mintFormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.mintForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+}
+
+.mintForm input[type="text"] {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.mintForm input[type="file"] {
+  margin: 10px 0;
+}
+
+.mintForm button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.mintForm button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.mintForm button:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.connectedAccount {
+  margin-bottom: 20px;
+}
+
+.metadata {
+  margin-top: 20px;
+}
