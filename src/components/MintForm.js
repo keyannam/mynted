@@ -22,6 +22,9 @@ function MintForm() {
 	const [url, setURL] = useState(null);
 	const [imageURL, setImageURL] = useState(null); 
 	const [mediaURL, setMediaURL] = useState(null); 
+	const [mintedTokenURI, setMintedTokenURI] = useState(null);
+
+
 	const [mynted, setMynted] = useState(null);
 
 
@@ -65,6 +68,8 @@ function MintForm() {
 	  const signer = await provider.getSigner();
 	  const transaction = await mynted.connect(signer).mintNFT(tokenURI, description, imageURI, mediaURI, { value: ethers.utils.parseUnits("1", "ether") });
 	  await transaction.wait();
+
+	  setMintedTokenURI(tokenURI);
 	};
 
 	const submitHandler = async (e) => {
@@ -157,6 +162,13 @@ function MintForm() {
 	      </button>
 	      <button type="submit" className={styles.mintFormButton} disabled={!name || !description || !image || !media || !account || !isMediaUploaded}>Mint NFT</button>
 	    </form>
+	  	{mintedTokenURI && (
+			  <p>
+			    <a href={mintedTokenURI} target="_blank" rel="noopener noreferrer">
+			      View minted NFT metadata
+			    </a>
+			  </p>
+			)}
 	  </div>
 	);
 };
