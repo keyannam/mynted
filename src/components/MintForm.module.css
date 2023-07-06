@@ -53,3 +53,18 @@
 .metadata {
   margin-top: 20px;
 }
+
+/* Grid component */
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem; /* this sets the space between grid items */
+  margin-top: 3rem;
+}
+
+.nftCard {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+

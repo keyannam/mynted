@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { WalletContext } from './App';
 import './LandingPage.css'; // import the styling
+import logo from '../myntedlogo.png';
 import { ethers } from 'ethers';
 
 function LandingPage() {
@@ -23,8 +24,8 @@ function LandingPage() {
 
   return (
     <div className="landing-container">
-      <h1>Welcome to MYNTED</h1>
-      <p>Upload, Mint & Display Your NFTs In 60 Seconds Or Less...</p>
+      <img src={logo} alt="Logo" />
+        <h2>Upload, Mint & Display Your NFTs In 60 Seconds Or Less...</h2>
       {
         account ?
         <button className="cta-button" onClick={() => navigate("/mint")}>Go to Mint Page</button>
