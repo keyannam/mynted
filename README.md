@@ -8,6 +8,8 @@ The mint function creates new tokens and assigns them to the caller of the funct
 
 Each token has a unique URI (the metadata of the token) which can link to information about the token, such as a JSON file stored on IPFS, a decentralized file storage system.
 
+<a href="https://shiny-base-2115.on.fleek.co/" target="_blank">Click Here To View The Live Version</a>
+
 <h2>Code Structure</h2>
 
 <h3>Smart Contract</h3>
@@ -45,17 +47,17 @@ Finally, click on the "Mint" button to mint your new NFT. Note that minting requ
 
 <h2>Resources and Links</h2>
 
-<a href="https://docs.soliditylang.org/en/v0.8.7/" target="_new">Solidity Docs</a>
+<a href="https://docs.soliditylang.org/en/v0.8.7/" target="_blank">Solidity Docs</a>
 
-<a href="https://hardhat.org/hardhat-runner/docs/guides/project-setup" target="_new">Hardhat Docs</a>
+<a href="https://hardhat.org/hardhat-runner/docs/guides/project-setup" target="_blank">Hardhat Docs</a>
 
-<a href="https://docs.openzeppelin.com/contracts/4.x/" target="_new">OpenZeppelin Contracts Docs</a>
+<a href="https://docs.openzeppelin.com/contracts/4.x/" target="_blank">OpenZeppelin Contracts Docs</a>
 
-<a href="https://reactjs.org/docs/getting-started.html" target="_new">React Documentation</a>
+<a href="https://reactjs.org/docs/getting-started.html" target="_blank">React Documentation</a>
 
-<a href="https://nft.storage/docs/" target="_new">NFT Storage</a>
+<a href="https://nft.storage/docs/" target="_blank">NFT Storage</a>
 
-<a href="https://docs.ethers.io/v5/" target="_new">Ethers.js Documentation</a>
+<a href="https://docs.ethers.io/v5/" target="_blank">Ethers.js Documentation</a>
 
 <h2>Install and Run Locally</h2>
 
