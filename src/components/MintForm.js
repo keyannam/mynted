@@ -201,7 +201,7 @@ const uploadButtonHandler = async () => {
     return;
   }
 
-  setUploading(true);  // Start upload status
+  setUploading(true);  
 
   try {
     await uploadImageAndMedia(image, media);
@@ -218,7 +218,7 @@ const uploadButtonHandler = async () => {
     });
   } catch (error) {
     console.error("Error uploading image:", error);
-    // Show the modal with an error message
+    
     setShowModal({
       title: "Upload Failed",
       body: "An error occurred while uploading your media.",
@@ -300,7 +300,7 @@ const uploadButtonHandler = async () => {
 			    <div className="card-body">
 			      <h5 className="card-title">{nft.name}</h5>
 			      <p className="card-text">{nft.description}</p>
-			      <a href={`https://testnets.opensea.io/assets/${config[network.chainId].mynted.address}/${nft.tokenId}`} 
+			      <a href={`https://testnets.opensea.io/assets/sepolia/${config[network.chainId].mynted.address}/${nft.tokenId}`} 
 			         target="_blank" 
 			         rel="noopener noreferrer" 
 			         className="btn btn-primary">
