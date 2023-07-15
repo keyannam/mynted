@@ -11,6 +11,7 @@ Each token has a unique URI (the metadata of the token) which can link to inform
 <h2>Code Structure</h2>
 
 <h3>Smart Contract<h3>
+
 The smart contract is designed using Solidity and OpenZeppelin libraries. 
 
 It extends from ERC721URIStorage and Ownable.
@@ -43,15 +44,22 @@ Click on the "Upload Media" button to upload your image and media to IPFS via th
 Finally, click on the "Mint" button to mint your new NFT. Note that minting requires 1 ETH which is set in the smart contract.
 
 <h2>Resources and Links</h2>
+
 <a href="https://docs.soliditylang.org/en/v0.8.7/" target="_new">Solidity Docs</a>
+
 <a href="https://docs.openzeppelin.com/contracts/4.x/" target="_new">OpenZeppelin Contracts Docs</a>
+
 <a href="https://reactjs.org/docs/getting-started.html" target="_new">React Documentation</a>
+
 <a href="https://nft.storage/docs/" target="_new">NFT Storage</a>
+
 <a href="https://docs.ethers.io/v5/" target="_new">Ethers.js Documentation</a>
 
 <h2>Prerequisites</h2>
 Node.js
-npm
+
+NPM
+
 MetaMask 
 
 <h2>Install and Run Locally</h2>
