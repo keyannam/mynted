@@ -1,7 +1,7 @@
 {
-  "31337": {
+  "11155111": { // sepolia
     "mynted": {
-      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+      "address": "0x6BD6653D07790204b89C271163C041e994cB5a30"
     }
   }
 }
