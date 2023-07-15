@@ -10,7 +10,7 @@ Each token has a unique URI (the metadata of the token) which can link to inform
 
 <h2>Code Structure</h2>
 
-<h3>Smart Contract<h3>
+<h3>Smart Contract</h3>
 
 The smart contract is designed using Solidity and OpenZeppelin libraries. 
 
@@ -47,6 +47,8 @@ Finally, click on the "Mint" button to mint your new NFT. Note that minting requ
 
 <a href="https://docs.soliditylang.org/en/v0.8.7/" target="_new">Solidity Docs</a>
 
+<a href="https://hardhat.org/hardhat-runner/docs/guides/project-setup" target="_new">Hardhat Docs</a>
+
 <a href="https://docs.openzeppelin.com/contracts/4.x/" target="_new">OpenZeppelin Contracts Docs</a>
 
 <a href="https://reactjs.org/docs/getting-started.html" target="_new">React Documentation</a>
@@ -54,13 +56,6 @@ Finally, click on the "Mint" button to mint your new NFT. Note that minting requ
 <a href="https://nft.storage/docs/" target="_new">NFT Storage</a>
 
 <a href="https://docs.ethers.io/v5/" target="_new">Ethers.js Documentation</a>
-
-<h2>Prerequisites</h2>
-Node.js
-
-NPM
-
-MetaMask 
 
 <h2>Install and Run Locally</h2>
 
