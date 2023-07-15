@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import Spinner from 'react-bootstrap/Spinner'
 import { NFTStorage, File } from 'nft.storage';
+
 import { ethers } from 'ethers';
 import config from '../config';
 import MyntedContract from '../abis/Mynted.json';
+
 import styles from './MintForm.module.css';
 import logo from '../myntedlogo.png';
-
-
 
 function MintForm() {
   const [provider, setProvider] = useState(null);
@@ -126,6 +127,9 @@ function MintForm() {
 	      }
 	    }	
 
+	  // Log the token ID to the console
+    console.log("Token ID: ", tokenId.toString());
+
 	    setMintedTokenURI(tokenURI);
 	    setMintedTokenId(tokenId);	
 
@@ -181,7 +185,6 @@ function MintForm() {
     const previewURL = URL.createObjectURL(event.target.files[0]);
     setPreviewImage(previewURL);
   };
-
 
 const uploadButtonHandler = async () => {
   if (name === "" || description === "" || !image || !media) {
@@ -285,7 +288,7 @@ const uploadButtonHandler = async () => {
 	        disabled={!image || uploading} 
 	        className={styles.uploadButton}
 	      >
-	        {uploading ? "Uploading..." : "Upload Image"}
+	        {uploading ? "Uploading..." : "Upload Media"}
 	      </button>
 	      <button type="submit" className={styles.mintFormButton} disabled={!name || !description || !image || !media || !account || !isMediaUploaded}>
 	      {minting ? "Minting..." : "Mint NFT"}</button>
