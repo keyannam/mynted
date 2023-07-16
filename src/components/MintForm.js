@@ -64,6 +64,7 @@ function MintForm() {
 		};
 
 	const uploadImageAndMedia = async (imageData, mediaData) => {
+		console.log("NFT.Storage API key:", process.env.REACT_APP_NFT_STORAGE_API_KEY);
 	  const client = new NFTStorage({ token: process.env.REACT_APP_NFT_STORAGE_API_KEY });	
 
 	  const metadata = {
@@ -74,7 +75,6 @@ function MintForm() {
 	  };	
 
 	  const result = await client.store(metadata);
-	  console.log(result)	
 
 	  // Use the URLs from the NFTStorage API
 	  const tokenURI = result.url;
@@ -96,7 +96,7 @@ function MintForm() {
 	  setMediaURL(mediaURI);	
 
 	  return { tokenURI, imageURI, mediaURI };
-	  console.log(metadata)
+	  
 	};
 
 	const mintMedia = async ({ tokenURI, imageURI, mediaURI }) => {
@@ -126,9 +126,6 @@ function MintForm() {
 	        break;
 	      }
 	    }	
-
-	  // Log the token ID to the console
-    console.log("Token ID: ", tokenId.toString());
 
 	    setMintedTokenURI(tokenURI);
 	    setMintedTokenId(tokenId);	
@@ -217,7 +214,6 @@ const uploadButtonHandler = async () => {
       ),
     });
   } catch (error) {
-    console.error("Error uploading image:", error);
     
     setShowModal({
       title: "Upload Failed",
