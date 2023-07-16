@@ -64,7 +64,6 @@ function MintForm() {
 		};
 
 	const uploadImageAndMedia = async (imageData, mediaData) => {
-		console.log("NFT.Storage API key:", process.env.REACT_APP_NFT_STORAGE_API_KEY);
 	  const client = new NFTStorage({ token: process.env.REACT_APP_NFT_STORAGE_API_KEY });	
 
 	  const metadata = {
