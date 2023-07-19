@@ -50,10 +50,6 @@ contract Mynted is ERC721URIStorage, Ownable {
         return _tokenIds.current();
     }
 
-	function tokenIds() public view returns (uint256) {
-	  	return _tokenIds.current();
-	}
-
     function withdraw() public onlyOwner { // Add onlyOwner modifier here
         require(address(this).balance > 0, "Contract balance is zero");
         (bool success, ) = owner().call{value: address(this).balance}("");

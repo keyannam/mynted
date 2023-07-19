@@ -464,19 +464,6 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "tokenIds",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
           "internalType": "uint256",

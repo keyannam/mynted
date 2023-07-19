@@ -45,10 +45,6 @@ describe("Mynted", function () {
   })
 
   describe('Minting', () => {
-    it('Increments the token id', async () => {
-      const tokenId = await mynted.tokenIds(); // Retrieve the current token ID
-      expect(tokenId).to.equal(1); // Adjust the expected token ID according to the number of minted NFTs
-    })
 
     it('Mints an NFT with correct token URI', async () => {
       const tokenURI = await mynted.tokenURI(1); // Retrieve the token URI of the first minted NFT
