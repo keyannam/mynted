@@ -6,6 +6,28 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.connectedAccount {
+  margin-bottom: 20px;
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.connectedAccount span {
+  font-weight: bold;
+  margin-left: 5px;
 }
 
 .mintForm {
@@ -15,21 +37,33 @@
   max-width: 500px;
 }
 
-.mintForm input[type="text"] {
+.inputField {
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.mintForm input[type="file"] {
+.customFileUpload {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
   margin: 10px 0;
+}
+
+.customFileUpload:hover {
+  background-color: #0056b3;
 }
 
 .mintForm button {
   padding: 10px 20px;
   margin: 10px 0;
-  background: #007BFF;
+  background: #28a745;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -43,7 +77,21 @@
 }
 
 .mintForm button:hover:not(:disabled) {
-  background: #0056b3;
+  background: #218838;
+}
+
+.previewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.previewImage {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .connectedAccount {
@@ -67,4 +115,3 @@
   padding: 1rem;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
-

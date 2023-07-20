@@ -150,14 +150,27 @@ function MintForm() {
 	    setDescription("");	
 
 	    setIsMediaUploaded(false); // Set media uploaded status back to false after minting
-	    setShowModal(null); // Close the modal after minting	
+	    setShowModal({
+	      title: "Success",
+	      body: "Congrats homie, you have minted your NFT!",
+	      footer: (
+	        <Button variant="success" onClick={handleClose}>
+	          Close
+	        </Button>
+	      ),
+	    }); // Show success modal after minting 
 
 	  } catch (error) {
+	    let errorMessage = "An error occurred while minting the media: " + error.message;
+	    if (error.message.includes("Nonce too high")) {
+	      errorMessage = "Please wait for your previous transaction to finish before sending a new one.";
+	    }
 	    setShowModal({
 	      title: "Error",
-	      body: "An error occurred while minting the media: " + error.message,
+	      body: errorMessage,
 	      footer: "Please check your inputs and try again"
 	    });
+
 	 } finally {
     setMinting(false); // Set minting state back to false
 	 }
@@ -201,7 +214,7 @@ const uploadButtonHandler = async () => {
 
   try {
     await uploadImageAndMedia(image, media);
-    setIsMediaUploaded(true); // Set media uploaded status to true after successful upload
+    setIsMediaUploaded(true);  // Set media uploaded status to true after successful upload
     // Show the modal with a success message
     setShowModal({
       title: "Upload Successful",
@@ -232,62 +245,58 @@ const uploadButtonHandler = async () => {
     loadBlockchainData();
   }, []);
 
-	return (
-	  <div className={styles.mintFormContainer}>
-	    <img src={logo} alt="Logo" />
-	    {account && <p className={styles.connectedAccount}>Connected Account: {account}</p>}
-	    
+return (
+	<div className={styles.mintFormContainer}>
+	  <img src={logo} alt="Logo" className={styles.logo} />
+	  	{account && <div className={styles.connectedAccount}>Connected Account: <span>{account}</span></div>}
+	  
+		  {isMediaUploaded 
+		    ? <p>Your media has been uploaded. You can now mint your NFT.</p>
+		    : <h3>Tell Us About Your NFT </h3>
+		  }  
+		<form onSubmit={submitHandler} className={styles.mintForm}>
+		  <input 
+		    type="text" 
+		    placeholder="Name Your NFT" 
+		    value={name} 
+		    onChange={(e) => setName(e.target.value)} 
+		    required
+		    className={styles.inputField}
+		  />
+		  <input 
+		    type="text" 
+		    placeholder="Describe Your NFT" 
+		    value={description} 
+		    onChange={(e) => setDescription(e.target.value)} 
+		    required
+		    className={styles.inputField}
+		  />
+		  {/* Display image preview */}
+		  {previewImage && (
+		    <div className={styles.previewContainer}>
+		      <h4>Image Preview:</h4>
+		      <img src={previewImage} alt="Preview" className={styles.previewImage} />
+		    </div>
+		  )}
+		  <label className={styles.customFileUpload}>
+		    <input type="file" onChange={handleFileChange} required style={{display: 'none'}} disabled={!name || !description}/>
+		    Choose Display Image
+		  </label>
+		  <label className={styles.customFileUpload}>
+		    <input type="file" onChange={(event) => setMedia(event.target.files[0])} required style={{display: 'none'}} disabled={!name || !description || !image}/>
+		    Select Your Media
+		  </label>
+		  <button 
+		    onClick={uploadButtonHandler} 
+		    disabled={!name || !description || !image || !media || uploading} 
+		    className={styles.uploadButton}
+		  >
+		    {uploading ? "Uploading..." : "Upload Your Files"}
+		  </button>
+		  <button type="submit" className={styles.mintFormButton} disabled={!name || !description || !image || !media || !account || !isMediaUploaded || minting}>
+		  {minting ? "Minting..." : "Mint NFT"}</button>
+		</form>
 
-	    {isMediaUploaded 
-	      ? <p>Your media has been uploaded. You can now mint your NFT.</p>
-	      : <p>Upload your media to mint your NFT.</p>
-	    }	
-
-	    <form onSubmit={submitHandler} className={styles.mintForm}>
-	      <input 
-	        type="text" 
-	        placeholder="Name Your NFT" 
-	        value={name} 
-	        onChange={(e) => setName(e.target.value)} 
-	        required
-	      />
-	      <br />
-	      <input 
-	        type="text" 
-	        placeholder="Describe Your NFT" 
-	        value={description} 
-	        onChange={(e) => setDescription(e.target.value)} 
-	        required
-	      />
-	      <br />
-	      <label>
-	        Display Image:&nbsp;
-	        <input type="file" onChange={handleFileChange} required/>
-	      </label>
-	      <br />
-	      {/* Display image preview */}
-	      {previewImage && (
-	        <div>
-	          <h4>Image Preview:&nbsp;</h4>
-	          <img src={previewImage} alt="Preview" style={{ width: '100%', maxWidth: '400px' }} />
-	        </div>
-	      )}
-	      <br />
-	      <label>
-	        Media:&nbsp;
-	        <input type="file" onChange={(event) => setMedia(event.target.files[0])} required />
-	      </label>
-	      <br />
-	      <button 
-	        onClick={uploadButtonHandler} 
-	        disabled={!image || uploading} 
-	        className={styles.uploadButton}
-	      >
-	        {uploading ? "Uploading..." : "Upload Media"}
-	      </button>
-	      <button type="submit" className={styles.mintFormButton} disabled={!name || !description || !image || !media || !account || !isMediaUploaded}>
-	      {minting ? "Minting..." : "Mint NFT"}</button>
-	    </form>
 	   <div className={styles.cardsContainer}>
 			{mintedNFTs.map((nft) => (
 			  <div key={nft.tokenId} className="card">
